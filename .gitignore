@@ -11,3 +11,7 @@ Design/~$Assets.xlsx
 *.png
 3ds Max/export/
 Photoshop/
+*.aux
+Latex/main.synctex.gz
+Latex/main.pdf
+*.toc
