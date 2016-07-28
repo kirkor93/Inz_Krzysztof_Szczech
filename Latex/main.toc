@@ -1,4 +1,0 @@
-\select@language {polish}
-\contentsline {chapter}{Rozdzia\l \ 1\relax .\kern .5em Wst\k ep}{2}
-\contentsline {section}{\numberline {1.1\relax .\kern .5em }Cel i za\IeC {\l }o\.zenia pracy}{2}
-\contentsline {section}{\numberline {1.2\relax .\kern .5em }Zakres pracy}{2}
