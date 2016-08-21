@@ -2,14 +2,28 @@
 
 \chapter{Mo¿liwe metody optymalizacji procesu}
 \label{t:optimalizations}
-
 Celem tego rozdzia³u jest przedstawienie istniej¹cych i wykorzystywanych w bran¿y gier komputerowych metod optymalizacji assetów trójwymiarowych. Ka¿da z opisywanych metod zawiera opis, potencjalne zyski id¹ce za jej zastosowaniem oraz przyk³ad u¿ycia w istniej¹cych produkcjach.
 
 \section{Modularnoœæ modeli i tekstur}
-
 Wykorzystywanie modu³ów przy tworzenia poziomów w grach komputerowych jest technik¹ bardzo szeroko stosowan¹ przez wspó³czesnych twórców. Ciê¿ko jest obecnie znaleŸæ produkcjê która nie korzysta³aby z zalet modularnoœci. \newline
-Czym jest wspomniany proces? Jedna z najwiêkszych firm bran¿ komputerowej - Epic Games - definiuje go jako "tworzenie du¿ej liczby wysokojakoœciowych fragmentów poziomu i wielokrotne u¿ywanie ich w inteligentny sposób"[2]. W praktyce wygl¹da to tak, ¿e wszelkie modele oraz tekstury tworzone s¹ w taki sposób, aby mo¿liwe by³o u³o¿enie jak najwiêkszej liczby kombinacji pasuj¹cych do siebie elementów. Dziêki temu ze stosunkowo niewielkiej liczby modu³ów osoba zajmuj¹ca siê póŸniej 
-
+Czym jest wspomniany proces? Jedna z najwiêkszych firm bran¿ komputerowej - Epic Games - definiuje go jako "tworzenie du¿ej liczby wysokojakoœciowych fragmentów poziomu i wielokrotne u¿ywanie ich w inteligentny sposób"[2]. W praktyce wygl¹da to tak, ¿e wszelkie modele oraz tekstury tworzone s¹ tak, aby mo¿liwe by³o u³o¿enie jak najwiêkszej liczby kombinacji pasuj¹cych do siebie elementów. Dziêki temu ze stosunkowo niewielkiej liczby modu³ów, osoba zajmuj¹ca siê póŸniej kreacj¹ docelowych poziomów w silniku gry mo¿e doœæ niskim kosztem bardzo uatrakcyjniæ ich wygl¹d. Rodzi to jednak wiele wyzwañ przed artystami zajmuj¹cymi siê tworzeniem siatek wielok¹towych oraz rysowaniem i edycj¹ tekstur. Przyk³adem jest tu chocia¿by odpowiednia konfiguracja siatki wed³ug której uk³adane s¹ elementy w silniku (ang. grid).[3] Wiêcej o nich wspomnê w kolejnym rozdziale, w którym opiszê szczegó³y procesu twórczego. \newline
+Bardzo wa¿nym pojêciem, które czêsto przewija siê przy okazji takiego podejœcia do procesu twórczego jest "tiling" (ang. tile - kafelek). W przypadku trójwymiarowych siatek wielok¹towych odnosi siê ono do tworzenia ich w taki sposób, aby postawione obok siebie dwa obiekty (na przyk³ad fragmenty œciany) wygl¹da³y jak jeden, spójny model. Analogicznie jest w przypadku tekstur - gdy u³o¿ymy taki obrazek obok siebie kilka razy, osoba ogl¹daj¹ca go nie mo¿e byæ w stanie zauwa¿yæ ³¹czeñ miêdzy instancjami (ale mo¿e spostrzec powtarzalnoœæ, jeœli powielimy go zbyt wiele razy). \newline Ponadto wyró¿niamy 2 rodzaje tilingu: 
+\begin{itemize}
+	\item jednokierunkowy - model lub tekstura mo¿e byæ uk³adana tylko w poziomie lub w pionie bez zauwa¿alnych szwów 
+	\item dwukierunkowy - uk³adanie bez szwów jest mo¿liwe zarówno w poziomie, jak i w pionie
+\end{itemize}
+ Przyk³ady obiektów pierwszego i drugiego rodzaju znajdziemy na rysunkach 2.1 oraz 2.2.
+ \begin{figure}[!ht]
+ 	\centering
+ 	\includegraphics[scale = 0.85]{figures/Wall_tileable}
+ 	\caption{Przyk³ad trójwymiarowego modelu (œciany) z jednokierunkowym tilingiem (Ÿród³o: opracowanie w³asne)}
+ \end{figure}
+ \begin{figure}[!ht]
+ 	\centering
+ 	\includegraphics[scale = 0.65]{figures/Floor_wooden_2}
+ 	\caption{Przyk³ad tekstury (pod³ogi) z dwukierunkowym tilingiem (Ÿród³o: opracowanie w³asne)}
+ \end{figure}
+ \newpage
 \section{Atlasowanie}
 
 \section{Wykorzystywanie mo¿liwoœci u¿ywanego silnika}
