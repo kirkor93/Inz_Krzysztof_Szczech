@@ -4,15 +4,28 @@
 \label{t:description}
 Rozdzia³ ma za zadanie ukazanie procesu tworzenia poziomu od etapu wczesnego planowania a¿ do finalnej sceny z oœwietleniem. Ka¿dy etap zosta³ pokrótce opisany: dlaczego siê go stosuje i jak mo¿na podejœæ do niego w optymalny sposób. Przyk³ady oparte s¹ w g³ównej mierze o doœwiadczenie twórców zajmuj¹cych siê tym od wielu lat - takimi, jak chocia¿by Epic Games czy Bethesda Softworks - którzy swoimi spostrze¿eniami dziel¹ siê na wszelakiego rodzaju konferencjach i w publikowanych artyku³ach.
 \section{Podzia³ obrazka na modularne tekstury i modele}
-Po obraniu wizji artystycznej narzuconej przez grafika koncepcyjnego zaczynaj¹ siê pierwsze prace projektowe maj¹ce na celu wyeliminowanie jak najwiêkszej liczby b³êdów na póŸniejszych etapach produkcji. Gdy projektant dostaje do dyspozycji grafikê koncepcyjn¹ lokacji, czêsto pierwszym krokiem jest odnalezienie na niej potencjalnych modu³ów oraz wyró¿nienie ich. Zwykle robi siê to dwukrotnie: pierwszy podzia³ dokonywany jest z uwzglêdnieniem potencjalnych kandydatów na trójwymiarowe siatki wykorzystane jako modu³y, natomiast drugi bierze pod uwagê 
-
+Po obraniu wizji artystycznej narzuconej przez grafika koncepcyjnego zaczynaj¹ siê pierwsze prace projektowe maj¹ce na celu wyeliminowanie jak najwiêkszej liczby b³êdów na póŸniejszych etapach produkcji. Gdy projektant dostaje do dyspozycji grafikê koncepcyjn¹ lokacji, czêsto pierwszym krokiem jest odnalezienie na niej potencjalnych modu³ów oraz wyró¿nienie ich. Zwykle robi siê to dwukrotnie: pierwszy podzia³ dokonywany jest z uwzglêdnieniem potencjalnych kandydatów na trójwymiarowe siatki wykorzystane jako modu³y, natomiast drugi bierze pod uwagê jak najoptymalniejsze wykorzystanie tekstur w procesie. Proces ten czêsto zwany jest ''scene breakout'' - czyli w luŸnym t³umaczeniu rozbicie sceny. \newline
+Podczas wyodrêbniania elementów nale¿y szukaæ modu³ów w taki sposób, aby wydobyæ jak najmniejsze, mo¿liwe do samodzielnego wykorzystania elementy (np. fragment kolumny mo¿na wykorzystaæ równie¿ jako podest lub rodzaj o³tarza), lub takie, które same w sobie nie s¹ zwykle wykorzystywane niezale¿nie, ale czêst¹ praktyk¹ bêdzie ich podmiana na inne warianty kolorystyczne lub kszta³ty (tutaj dobrym przyk³adem s¹ chocia¿by okna lub drzwi, które warto wyodrêbniæ od modu³ów œcian).\newline
+Rozbijanie sceny ma na celu wstêpne oszacowanie liczby wymaganych do stworzenia assetów oraz daæ twórcom pogl¹d na to, jak mog¹ one wygl¹daæ. Dziêki temu, ¿e nie wymaga zbyt wielkich nak³adów czasowych, jest czêsto stosowan¹ technik¹ przez twórców grafiki trójwymiarowej w grach komputerowych. Praktykuj¹ go chocia¿by u¿ytkownicy bran¿owego forum polycount.com podczas comiesiêcznego \textit{Monthly Community Noob Challenge}. Przyk³ad przeprowadzenia scene breakoutu widoczny jest na rysunku 3.1.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[scale = 0.24]{figures/Scene_breakdown}
 	\caption{Przyk³adowy podzia³ sceny z uwzglêdnieniem modeli (po lewej) oraz tekstur (po prawej) (Ÿród³o: \cite{NoobChallengeAugust2013})}
 \end{figure}
-\section{Tworzenie listy wymaganych assetów}
-\section{Tworzenie dokumentacji z wytycznymi}
+\section{Tworzenie dokumentacji projektowej}
+Etap pisania dokumentacji projektowej jest szczególnie wa¿ny w przypadku, gdy nad tworzeniem poziomów pracuje kilka lub nawet kilkanaœcie osób. Pozwala ona na ujednolicenie samego procesu wœród wszystkich twórców, minimalizuje ryzyko zdublowania pracy przez kilka osób (na przyk³ad wykonania tego samego modelu przez dwóch artystów 3d), a tak¿e pozwala jasno okreœliæ obrany kierunek artystyczny, którego maj¹ trzymaæ siê wszyscy bior¹cy udzia³ w procesie.\newline
+Podczas tworzenia takiej dokumentacji warto wzi¹æ pod uwagê takie elementy, jak chocia¿by:
+\begin{description}
+	\item[Tworzenie listy assetów] \hfill \\
+	Po wstêpnym wydzieleniu assetów na grafikach koncepcyjnych warto wypisaæ szczegó³ow¹ listê wszystkich modeli oraz tekstur, które zostan¹ zamieszczone w finalnej paczce. W przypadku siatek 3d warto równie¿ zapisaæ wymagany rozmiar w przestrzeni oraz liczbê kierunków tilingu (1, 2 lub jego brak). Podczas wpisywania tekstur, oprócz wymienionych ju¿ aspektów, mo¿na zwróciæ dodatkow¹ uwagê na ich umiejscowienie w atlasie - w którym z atlasów (jeœli jest ich kilka) oraz w którym jego miejscu ma siê ona znajdowaæ. \newline
+	Taka lista mo¿e nastêpnie zostaæ opublikowana zespo³owi projektantów i grafików w postaci zadañ do wykonania lub nawet zwyk³ego, wspó³dzielonego w chmurze dokumentu.
+	\item[Jednostki miary w silniku] \hfill \\
+	Bardzo wa¿n¹ kwesti¹, któr¹ nale¿y rozpatrzeæ jest
+	\item[Parametry eksportu] \hfill \\ 
+	\item[Pivoty] \hfill \\
+	\item[Nazewnictwo] \hfill \\
+	\item[Referencje] \hfill \\
+\end{description}
 \section{Tworzenie tymczasowych wersji assetów oraz testy}
 \section{Tworzenie finalnych wersji modeli i tekstur}
 \section{Optymalizacja materia³ów}
