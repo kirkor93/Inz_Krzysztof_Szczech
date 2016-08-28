@@ -19,10 +19,29 @@ Podczas tworzenia takiej dokumentacji warto wzi¹æ pod uwagê takie elementy, jak 
 	\item[Tworzenie listy assetów] \hfill \\
 	Po wstêpnym wydzieleniu assetów na grafikach koncepcyjnych warto wypisaæ szczegó³ow¹ listê wszystkich modeli oraz tekstur, które zostan¹ zamieszczone w finalnej paczce. W przypadku siatek 3d warto równie¿ zapisaæ wymagany rozmiar w przestrzeni oraz liczbê kierunków tilingu (1, 2 lub jego brak). Podczas wpisywania tekstur, oprócz wymienionych ju¿ aspektów, mo¿na zwróciæ dodatkow¹ uwagê na ich umiejscowienie w atlasie - w którym z atlasów (jeœli jest ich kilka) oraz w którym jego miejscu ma siê ona znajdowaæ. \newline
 	Taka lista mo¿e nastêpnie zostaæ opublikowana zespo³owi projektantów i grafików w postaci zadañ do wykonania lub nawet zwyk³ego, wspó³dzielonego w chmurze dokumentu.
-	\item[Jednostki miary w silniku] \hfill \\
-	Bardzo wa¿n¹ kwesti¹, któr¹ nale¿y rozpatrzeæ jest
+	\item[Jednostki miary w silniku oraz grid] \hfill \\
+	Bardzo wa¿n¹ kwesti¹, któr¹ nale¿y rozpatrzeæ jest dostosowanie ustawieñ programu do edycji modeli 3d do wymagañ stawianych przez silnik gry. Najwiêkszym problemem, który koniecznie trzeba rozpatrzeæ jest dobór jednostek stosowanych w docelowej technologii. Najwiêksz¹ konsekwencj¹ id¹c¹ za tym wyborem jest zmieniaj¹ca siê skala siatki wed³ug której ustawiane s¹ docelowe modele (ang. grid). Uk³adanie modeli za pomoc¹ gridu jest jedn¹ z najwiêkszych zalet modu³owego tworzenia poziomów. Pozwala ona znacznie skróciæ czas pracy projektantów, gdy¿ usuwa z procesu koniecznoœæ obliczania koordynatów ka¿dego obiektu i pozwala je ustawiaæ sugeruj¹c siê liniami wy¿ej wspomnianej siatki. Obecnie najpopularniejsze s¹ dwa rozwi¹zania stosowane przez twórców. Poni¿ej je przedstawiê, a tak¿e spróbujê przybli¿yæ potencjalne zalety i wady obu podejœæ:
+	\begin{itemize}
+		\item \textbf{System metryczny} - stosowany chocia¿by w \textit{Unreal Engine 4}. Podstawow¹ jednostk¹ miary jest zwykle centymetr, a kolejne elementy siatki uk³adane s¹ co X centymetrów - gdzie X jest dowoln¹ liczb¹ obran¹ przez u¿ytkownika. Z regu³y przyjmuje siê ¿e przy takim systemie postaæ ma oko³o 180 jednostek wzrostu. Do zalet takiego podejœcia nale¿y na pewno jego intuicyjnoœæ w odniesieniu do pomiarów czynionych w œwiecie rzeczywistym - mo¿na bezproblemowo odwzorowywaæ wymiary rzeczywistych obiektów bez dodatkowych obliczeñ. Za wadê mo¿na uznaæ potencjalne problemy podczas skalowania obiektu (zw³aszcza, gdy jest on zmniejszany), gdy¿ w przypadku modu³ów zwykle stosuje siê zasadê, ¿e obiekty skalowane s¹ o kolejne potêgi liczby 2. \cite{CreatingModularGameArt}
+		\item \textbf{System oparty o potêgi liczby 2} - wykorzystywany w \textit{Unreal Engine 3}. W przeciwieñstwie do poprzedniego systemu u¿ytkownik ma mniejszy wybór jeœli chodzi o ustawienia siatki. Zwykle uk³adana jest co $2^n$ jednostek silnika (n obierane jest przez u¿ytkownika). Postaæ przy takim podejœciu ma oko³o 96 jednostek wysokoœci. System eliminuje problem podczas skalowania obiektów w dó³ (jest tak poniewa¿ powsta³ on na podstawie liczby 2), jednak mo¿e sprawiaæ problemy przy przeliczaniu wymiarów (zw³aszcza podczas modelowania obiektów znanych ze œwiata rzeczywistego). \cite{CreatingModularGameArt}
+	\end{itemize}
+	Ujednolicenie ustawieñ programu w którym tworzone s¹ modele jest kluczowe dla dalszej bezproblemowej eksploatacji wytworzonych assetów. \newline
+	Niektórzy twórcy kreuj¹ jeszcze inne systemy miar w swoich silnikach. Dobrym przyk³adem mo¿e byæ tu Bethesda - w silniku rozwijanym przez t¹ firmê postaæ ma oko³o 128 ($2^7$) jednostek wzrostu. Mo¿emy to zobaczyæ na udostêpnionej grafice (Rysunek 3.2).
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.84]{figures/Unit_scale}
+		\caption{Postaæ w silniku firmy Bethesda Softworks (Ÿród³o: \cite{Skyrim})}
+	\end{figure}
 	\item[Parametry eksportu] \hfill \\ 
+	Podobnie jak z ustawieniem jednostek oraz rozmieszczeniem gridu - parametry eksportu modeli do danego silnika maj¹ bardzo du¿e znaczenie. \newline
+	DOKOÑCZ
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale = 0.70]{figures/Export_parameters}
+			\caption{Ustawienia eksportu dla statycznych modeli w programie \textit{Autodesk 3ds Max} (Ÿród³o: opracowanie w³asne)}
+		\end{figure}
 	\item[Pivoty] \hfill \\
+	Pivoty s¹ punktami wzglêdem których dokonuje siê wszelkich transformacji lokalnych na trójwymiarowej siatce. Dlatego ich umiejscowienie ma bardzo du¿e znaczenie dla 
 	\item[Nazewnictwo] \hfill \\
 	\item[Referencje] \hfill \\
 \end{description}
