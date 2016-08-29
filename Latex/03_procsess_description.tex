@@ -40,12 +40,18 @@ Podczas tworzenia takiej dokumentacji warto wzi¹æ pod uwagê takie elementy, jak 
 			\includegraphics[scale = 0.70]{figures/Export_parameters}
 			\caption{Ustawienia eksportu dla statycznych modeli w programie \textit{Autodesk 3ds Max} (Ÿród³o: opracowanie w³asne)}
 		\end{figure}
-	\item[Pivoty] \hfill \\
-	Pivoty s¹ punktami wzglêdem których dokonuje siê wszelkich transformacji lokalnych na trójwymiarowej siatce. Dlatego ich umiejscowienie ma bardzo du¿e znaczenie dla 
 	\item[Nazewnictwo] \hfill \\
 	\item[Referencje] \hfill \\
 \end{description}
 \section{Tworzenie tymczasowych wersji assetów oraz testy}
+	Pivoty \newline
+	Pivoty s¹ punktami wzglêdem których dokonuje siê wszelkich transformacji lokalnych na trójwymiarowej siatce. Dlatego ich umiejscowienie jest wa¿ne dla póŸniejszych ewentualnych modyfikacji modelu. Ma do szczególnie du¿e znaczenie podczas skalowania i obracania obiektów. Paul Mader w swoim artykule na temat tworzenia modularnych assetów wymienia 5 aspektów, które nale¿y wzi¹æ pod uwagê podczas wybierania tych punktów. Ich waga roœnie wraz z pozycj¹: \cite{CreatingModularGameArt}
+	\begin{itemize}
+		\item \textbf{Punkt centralny} - u¿ywany w modelach od których nie wymaga siê dok³adnego spasowania miêdzy elementami. Przyk³adem mog¹ byæ tu chocia¿by kamienie.
+		\item \textbf{Symetria} - w symetrycznych obiektach nale¿y obieraæ punkt znajduj¹cy siê na osi symetrii (dodatkowo kieruj¹c siê poprzednim punktem mo¿na umieœciæ go w œrodku masy).
+		\item \textbf{U³o¿enie w œrodowisku} - obiekty, które bêd¹ po³o¿one w œwiecie w okreœlony sposób, powinny mieæ ustawiony punkt pivotu tak, aby jak najbardziej u³atwiæ ich umiejscowienie (na przyk³ad u skrzyñ powinna to byæ ich dolna czêœæ, co u³atwi uk³adanie na pod³odze).
+		\item \textbf{Tiling} - siatki 
+	\end{itemize}
 \section{Tworzenie finalnych wersji modeli i tekstur}
 \section{Optymalizacja materia³ów}
 \section{Tworzenie finalnej sceny i ustawianie oœwietlenia}
