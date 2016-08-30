@@ -92,7 +92,7 @@ Tak opracowana dokumentacja projektowa pozwala na wyeliminowanie wielu problemów
 		\item \textbf{Tiling} - siatki wykorzystuj¹ce tiling powinny mieæ umieszczony punkt pivotu tak, aby da³o siê bezproblemowo ³¹czyæ je z kolejnymi modu³ami.
 		\item \textbf{Oœ obrotu} - najwa¿niejszym aspektem, który powinien byæ pod uwagê jest punkt obrotu. Ma to szczególnie du¿e znaczenie w przypadku modeli, które maj¹ tworzyæ œrodowisko na planie okrêgu. Odpowiednie dobranie pivotu w tym przypadku pozwala unikn¹æ problemów z niedopasowanymi siatkami po obróceniu. 
 	\end{enumerate}
-	Przyk³ady umiejscowienia pivotów z powy¿szej listy znajdziemy na rysunku [3.6].
+	Przyk³ady umiejscowienia pivotów z powy¿szej listy znajdziemy na rysunku 3.6.
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.83]{figures/Pivots}
@@ -115,10 +115,20 @@ Rysunek [3.8] pokazuje proporcje czasu grafika, jakie powinny zostaæ poœwiêcone 
 
 \section{Tworzenie finalnej sceny i ustawianie oœwietlenia}
 Podczas finalizowania procesu tworzenia poziomu projektanci skupiaj¹ siê g³ównie na jak najatrakcyjniejszym zaprezentowaniu stworzonej sceny. Kilkoma elementami nad którymi warto skupiæ siê w trakcie robienia tego s¹ miêdzy innymi:
+\begin{itemize}
+	\item \textbf{Ukrycie niedoskona³oœci przed oczami gracza}. Nie jest mo¿liwe stworzenie mapy, która bêdzie idelna w ka¿dym jej miejscu. Zawsze znajdzie siê jakiœ punkt który jest wykonany trochê gorzej lub jest nieco mniej ciekawy ni¿ reszta poziomu. W takim wypadku dobrze jest schowaæ je przed graczem. Aby to uzyskaæ stosuje siê takie techniki, jak:
+	\begin{itemize}
+		\item Zaciemnienie miejsca, które chcemy ukryæ - tam gdzie nie ma œwiat³a, nie mo¿na dostrzec niedoskona³oœci.
+		\item Zas³oniêcie niedoskona³oœci innymi obiektami - wszelkie Ÿle spasowane elementy mo¿na po prostu zas³oniæ innym, pasuj¹cym (mo¿e to byæ na przyk³ad g³az w jaskini albo s³up w œrodku budynku)
+		\item Odwrócenie uwagi gracza od takich miejsc - jeœli gracz bêdzie mia³ przed sob¹ inne, ciekawsze fragmenty poziomu istnieje mniejsza szansa na to, ¿e zwróci uwagê na te mniej doskona³e
+	\end{itemize}
+	Te wszystkie techniki mo¿na ze sob¹ ³¹czyæ w celu uzyskania jeszcze lepszego efektu.
+	\item \textbf{Zwrócenie uwagi gracza na elementy istotne w danym poziomie}. Tutaj chodzi przede wszystkim o to, aby gracz mia³ ca³y czas œwiadomoœæ tego dok¹d musi iœæ, aby pchn¹æ dalej akcjê. Za pomoc¹ oœwietlenia mo¿na go prowadziæ tak, aby pod¹¿a³ szlakiem wytyczonym przez twórców.
+\end{itemize}
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.73]{figures/Beta_models}
-		\caption{Finalne paczka modeli (Ÿród³o: \cite{Skyrim})}
+		\caption{Finalna paczka modeli (Ÿród³o: \cite{Skyrim})}
 	\end{figure}
 
 
