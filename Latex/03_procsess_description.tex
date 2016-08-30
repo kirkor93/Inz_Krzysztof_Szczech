@@ -33,25 +33,121 @@ Podczas tworzenia takiej dokumentacji warto wzi¹æ pod uwagê takie elementy, jak 
 		\caption{Postaæ w silniku firmy Bethesda Softworks (Ÿród³o: \cite{Skyrim})}
 	\end{figure}
 	\item[Parametry eksportu] \hfill \\ 
-	Podobnie jak z ustawieniem jednostek oraz rozmieszczeniem gridu - parametry eksportu modeli do danego silnika maj¹ bardzo du¿e znaczenie. \newline
-	DOKOÑCZ
-		\begin{figure}[!ht]
-			\centering
-			\includegraphics[scale = 0.70]{figures/Export_parameters}
-			\caption{Ustawienia eksportu dla statycznych modeli w programie \textit{Autodesk 3ds Max} (Ÿród³o: opracowanie w³asne)}
-		\end{figure}
-	\item[Nazewnictwo] \hfill \\
-	\item[Referencje] \hfill \\
-\end{description}
-\section{Tworzenie tymczasowych wersji assetów oraz testy}
-	Pivoty \newline
-	Pivoty s¹ punktami wzglêdem których dokonuje siê wszelkich transformacji lokalnych na trójwymiarowej siatce. Dlatego ich umiejscowienie jest wa¿ne dla póŸniejszych ewentualnych modyfikacji modelu. Ma do szczególnie du¿e znaczenie podczas skalowania i obracania obiektów. Paul Mader w swoim artykule na temat tworzenia modularnych assetów wymienia 5 aspektów, które nale¿y wzi¹æ pod uwagê podczas wybierania tych punktów. Ich waga roœnie wraz z pozycj¹: \cite{CreatingModularGameArt}
+	Podobnie jak z ustawieniem jednostek oraz rozmieszczeniem gridu - parametry eksportu modeli do danego silnika maj¹ bardzo du¿e znaczenie. Dobr¹ konfiguracjê samego programu mo¿na popsuæ z³ymi ustawieniami eksportera. W dokumentacji warto uj¹æ kilka kwestii (zak³adaj¹c, ¿e eksportujemy pliki do formatu .fbx):
 	\begin{itemize}
+		\item Jakiej skali chcemy u¿ywaæ przy eksporcie. Tutaj zwykle ustawiamy to w taki sposób, aby wynosi³a ona dok³adnie 1.
+		\item Jakie elementy sceny maj¹ znaleŸæ siê w pliku. To pozwala unikn¹æ przypadkowego wyeksportowania elementów, które nie powinny siê tam znaleŸæ. Wœród nich mo¿na wymieniæ chocia¿by: siatki wielok¹towe, koœci i animacje, kamery, œwiat³a, czy te¿ elementy pomocnicze.
+		\item Jakie parametry samych modeli maj¹ zostaæ umieszczone. Niektóre silniki potrzebuj¹ œciœle okreœlonych ustawieñ eksportu siatki. Tutaj dobrym przyk³adem jest \textit{Unreal Engine 4}, który wymaga dodatkowego zamieszczenia grup wyg³adzania w celu poprawnego importu siatki.
+	\end{itemize}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.70]{figures/Export_parameters}
+		\caption{Ustawienia eksportu dla statycznych modeli w programie \textit{Autodesk 3ds Max} (Ÿród³o: opracowanie w³asne)}
+	\end{figure}
+	\item[Nazewnictwo] \hfill \\
+	Konwencje nazewnictwa s¹ kwesti¹ z pozoru niewiele znacz¹c¹. Jednak podczas tworzenia poziomów z modu³ów projektanci mog¹ bardzo szybko pogubiæ siê w nat³oku assetów, które s¹ nazywane w niejasny sposób. Dlatego te¿ stosowane s¹ œcis³e zasady nazewnictwa. Pozwalaj¹ one na szybkie odnalezienie przeznaczenia danego modelu bez wczeœniejszego ustawiania go w scenie, a czasami nawet bez u¿ywania podgl¹du. Przyk³adem implementacji wewnêtrznej konwencji nazewnictwa mo¿e byæ ta stosowana przez firmê Bethesda Softworks. Przeanalizujmy asset, którego nazwa brzmi: ''UtlBayCorInMidPRTT01L01'': \cite{Skyrim}
+	\begin{itemize}
+		\item \textbf{Utl} - oznacza, ¿e jest on czêœci¹ pakietu ''Utility''
+		\item \textbf{Bay} - oznacza, ¿e jest on czêœci¹ pakietu ''Bay'' (wchodzi on w sk³ad ''Utility'')
+		\item \textbf{Cor} - jest to fragment oznaczaj¹cy, ¿e mamy do czynienia z elementem naro¿nym (ang. corner oznacza naro¿nik)
+		\item \textbf{In} - oznacza, ¿e jest to naro¿nik wewnêtrzny (zamiast tego, moglibyœmy tu znaleŸæ ''Out'', które oznacza³oby wygiêcie w przeciwnym kierunku)
+		\item \textbf{Mid} - okreœla kierunek tilingu. W tym wypadku element mo¿emy dopasowywaæ wertykalnie
+		\item \textbf{PRTT01} - tego fragmentu twórca artyku³u nie potrafi³ rozszyfrowaæ
+		\item \textbf{L} - skrócone ''Left''. U¿ywane przez twórców do rozró¿nienia modeli odbitych lustrzanie
+		\item \textbf{01} - pozwala rozró¿niaæ ró¿ne wersje wizualne danego assetu		
+	\end{itemize}
+	Jeœli osoba tworz¹ca modele stosuje siê do podobnego systemu, ju¿ po samych nazwach assetów da siê (przynajmniej w przybli¿eniu) okreœliæ potencjalne ich zastosowanie. Kluczem jest tutaj dyscyplina w trzymaniu siê konwencji.
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.20]{figures/Skyrim_names}
+		\caption{Nazewnictwo stosowane w firmie Bethesda Softworks (Ÿród³o: \cite{Skyrim})}
+	\end{figure}
+	\item[Referencje] \hfill \\
+	Zbieranie obrazów referencyjnych jest wa¿nym etapem preprodukcji ka¿dego poziomu. Bez nich bardzo trudno jest stworzyæ coœ, co wygl¹da realistycznie, autentycznie oraz jest wysokiej jakoœci. \cite{UltimateLevelDesign} Ludzki umys³ nie radzi sobie najlepiej z zapamiêtywaniem detali, dlatego warto gromadziæ rysunki, które pozwalaj¹ je odtworzyæ w póŸniejszym etapie. \newline
+	Referencje mo¿emy podzieliæ na kilka kategorii w zale¿noœci od ich docelowego zastosowania. Wyró¿niamy referencje:
+	\begin{itemize}
+		\item \textbf{architektoniczne} - zawieraj¹ w sobie odnoœniki do stylów architektonicznych, w których maj¹ byæ wykonane modele i tekstury - w szczególnoœci budowli.
+		\item \textbf{œrodowiskowe} - daj¹ pogl¹d na œrodowisko w jakim bêdzie porusza³ siê potencjalny gracz
+		\item \textbf{oœwietleniowe} - ukazuj¹ jak musz¹ zostaæ oœwietlone poziomy w celu uzyskania odpowiedniego klimatu.
+		\item \textbf{skupione na detalach} - daj¹ wgl¹d w ewentualne detale, które mog¹ zostaæ umieszczone na modelach
+		\item \textbf{inspiracje} - dodatkowe obrazy luŸno zwi¹zane z tematyk¹ pracy. Maj¹ na celu rozszerzyæ perspektywê twórcy i dostarczyæ mu dodatkowych inspiracji podczas tworzenia grafik
+	\end{itemize}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.20]{figures/References}
+		\caption{Zbiór referencji (tzw. mudboard) (Ÿród³o: opracowanie w³asne)}
+	\end{figure}
+\end{description}
+Tak opracowana dokumentacja projektowa pozwala na wyeliminowanie wielu problemów, które mog³yby powstaæ podczas pracy w kilkuosobowym zespole (zw³aszcza na linii graficy - projektanci). Dlatego warto poœwiêciæ czas jeszcze podczas fazy preprodukcji, aby póŸniej w du¿o prostszy sposób móc kontrolowaæ pracê zespo³u twórców.
+\section{Tworzenie tymczasowych wersji assetów oraz testy}
+	Ta faza ma na celu szybkie stworzenie prototypów assetów, które bêd¹ w pe³ni funkcjonalne, jednak jeszcze dalekie od finalnej wersji wizualnej. Pozwala to sprawdziæ, czy koncepcja tworzenia modeli jest s³uszna i czy nie pominiêto w procesie jakiegoœ istotnego faktu. Po przejœciu przez fazê pierwszych testów, modele mog¹ byæ ustawiane na finalnych pozycjach w poziomie. G³ównym wymaganiem, jakie musz¹ spe³niæ, aby to siê sta³o jest odpowiednie ustawienie pivotów.
+	
+	
+	\textbf{Pivoty} \newline
+	Pivoty s¹ punktami wzglêdem których dokonuje siê wszelkich transformacji lokalnych na trójwymiarowej siatce. Dlatego ich umiejscowienie jest wa¿ne dla póŸniejszych ewentualnych modyfikacji modelu.  Ma do szczególnie du¿e znaczenie podczas skalowania i obracania obiektów. Etap prototypowania jest doskona³¹ okazj¹ do przetestowania s³usznoœci ich umiejscowienia. Paul Mader w swoim artykule na temat tworzenia modularnych assetów wymienia 5 aspektów, które nale¿y wzi¹æ pod uwagê podczas wybierania tych punktów. Ich waga roœnie wraz z pozycj¹: \cite{CreatingModularGameArt}
+	\begin{enumerate}
 		\item \textbf{Punkt centralny} - u¿ywany w modelach od których nie wymaga siê dok³adnego spasowania miêdzy elementami. Przyk³adem mog¹ byæ tu chocia¿by kamienie.
 		\item \textbf{Symetria} - w symetrycznych obiektach nale¿y obieraæ punkt znajduj¹cy siê na osi symetrii (dodatkowo kieruj¹c siê poprzednim punktem mo¿na umieœciæ go w œrodku masy).
 		\item \textbf{U³o¿enie w œrodowisku} - obiekty, które bêd¹ po³o¿one w œwiecie w okreœlony sposób, powinny mieæ ustawiony punkt pivotu tak, aby jak najbardziej u³atwiæ ich umiejscowienie (na przyk³ad u skrzyñ powinna to byæ ich dolna czêœæ, co u³atwi uk³adanie na pod³odze).
-		\item \textbf{Tiling} - siatki 
-	\end{itemize}
+		\item \textbf{Tiling} - siatki wykorzystuj¹ce tiling powinny mieæ umieszczony punkt pivotu tak, aby da³o siê bezproblemowo ³¹czyæ je z kolejnymi modu³ami.
+		\item \textbf{Oœ obrotu} - najwa¿niejszym aspektem, który powinien byæ pod uwagê jest punkt obrotu. Ma to szczególnie du¿e znaczenie w przypadku modeli, które maj¹ tworzyæ œrodowisko na planie okrêgu. Odpowiednie dobranie pivotu w tym przypadku pozwala unikn¹æ problemów z niedopasowanymi siatkami po obróceniu. 
+	\end{enumerate}
+	Przyk³ady umiejscowienia pivotów z powy¿szej listy znajdziemy na rysunku [3.6].
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.83]{figures/Pivots}
+		\caption{Ró¿ne rodzaje umiejscowienia pivotów (Ÿród³o: \cite{CreatingModularGameArt})}
+	\end{figure}	
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.23]{figures/Alpha_models}
+		\caption{Paczka modeli w fazie prototypu (Ÿród³o: \cite{Skyrim})}
+	\end{figure}	
 \section{Tworzenie finalnych wersji modeli i tekstur}
-\section{Optymalizacja materia³ów}
+Po przejœciu przez fazê prototypu proces twórczy mo¿e przejœæ w dwie niezale¿ne od siebie œcie¿ki. Pierwsz¹ z nich jest tworzenie contentu graficznego, czyli dodawanie szczegó³ów graficznych, mapowanie koordynatów UV oraz teksturowanie. Druga z nich, to uk³adanie sceny w silniku graficznym przez projektanta. Dziêki wczeœniej poczynionym planom oraz testom z doœæ du¿¹ pewnoœci¹ mo¿na stwierdziæ, ¿e po podmianie tymczasowych modeli na ich finalne wersje poziom bêdzie wygl¹da³ tak, jak zaplanowa³ sobie tego level designer. Zwykle ten etap jest najd³u¿szy spoœród ca³ego procesu tworzenia paczki assetów. W przypadku du¿ych projektów AAA mo¿e on trwaæ nawet kilka miesiêcy \cite{Skyrim}.\newline
+Podczas tworzenia finalnych modeli i tekstur nale¿y równie¿ uwa¿aæ na potencjalny problem wygl¹du poziomu. Modularnoœæ ma to do siebie, ¿e ³atwo mo¿na wprowadziæ du¿¹ monotoniê w scenie.\cite{UDNLevelDesign} Mo¿na to prze³amaæ poprzez tworzenie coraz wiêkszej liczby wariantów kolorystycznych samych assetów, co sprawia, ¿e ³atwiej pogubiæ siê w nat³oku dostêpnych mo¿liwoœci. Drugim ze sposobów jest tworzenie tak zwanych ''hero pieces'', czyli szczegó³owych modeli, które maj¹ przyci¹gn¹æ uwagê potencjalnego gracza i odwróciæ j¹ od powtarzalnych modu³ów. Jednak równie¿ tutaj nale¿y uwa¿aæ aby nie przesadziæ. Czas, jaki trzeba poœwiêciæ na wykonanie takich assetów jest znacznie wiêkszy ni¿ ten wymagany przy normalnych, powtarzalnych kawa³kach. \newline
+Rysunek [3.8] pokazuje proporcje czasu grafika, jakie powinny zostaæ poœwiêcone na wytwarzanie obu rodzajów modeli. Dlaczego tak ma³o powinno zostaæ poœwiêcone na ''hero pieces''? Otó¿, s¹ one wykorzystywane bardzo rzadko podczas tworzenia finalnych poziomów (zwykle tylko raz), co sprawia ¿e czas wymagany do ich stworzenia jest tak du¿y, ¿e tworzenie ich w wiêkszej liczbie jest nieop³acalne dla ca³ego procesu twórczego.
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.23]{figures/HeroPieces}
+		\caption{Porównanie czasu, jaki powinien zostaæ poœwiêcony na tworzenie poszczególnych assetów (Ÿród³o: \cite{Skyrim})}
+	\end{figure}
+
 \section{Tworzenie finalnej sceny i ustawianie oœwietlenia}
+Podczas finalizowania procesu tworzenia poziomu projektanci skupiaj¹ siê g³ównie na jak najatrakcyjniejszym zaprezentowaniu stworzonej sceny. Kilkoma elementami nad którymi warto skupiæ siê w trakcie robienia tego s¹ miêdzy innymi:
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.73]{figures/Beta_models}
+		\caption{Finalne paczka modeli (Ÿród³o: \cite{Skyrim})}
+	\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
