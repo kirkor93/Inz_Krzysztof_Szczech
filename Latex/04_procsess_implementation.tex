@@ -19,11 +19,23 @@ Grafika koncepcyjna bêd¹ca podstaw¹ realizacji czêœci praktycznej pracy zosta³a 
 		\caption{Grafika koncepcyjna zaprezentowana w \textit{Monthly Community Noob Challenge 30} (Ÿród³o: \cite{NoobChallengeMay2015})}
 	\end{figure}
 \section{Faza projektowania}
+Podczas preprodukcji szczególny nacisk zosta³ po³o¿ony na opracowaniu takiego schematu dzia³ania, aby móg³ on zostaæ w praktyce wdro¿ony do pracy wiêkszego zespo³u i oszczêdza³ mo¿liwie jak najwiêcej czasu podczas fazy produkcji. Przy tworzeniu pracy zosta³y wykorzystane narzêdzia nieprzystosowane do pracy w zespole, jednak te same metody mog¹ zostaæ wykorzystane przy u¿yciu innych programów, które zostan¹ zaproponowane podczas opisu realizacji. \newline
+
+Pierwszym krokiem podczas fazy projektowej by³ rozk³ad sceny na modu³y. Powsta³y w ten sposób dwa nowe obrazki:
+\begin{itemize}
+	\item Podzia³ z uwzglêdnieniem modularnych modeli (przy czym pominiêto œciany, sufity i pod³ogi dla zachowania lepszej czytelnoœci)
+	\item Podzia³ z uwzglêdnieniem tekstur, które znajd¹ siê w finalnym atlasie
+\end{itemize}
+Efekt pracy mo¿na zobaczyæ na rysunku 4.2.
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.30]{figures/My_breakdown}
 		\caption{Podzia³ na modularne modele i tekstury wybranej do realizacji grafiki koncepcyjnej (Ÿród³o: opracowanie w³asne)}
 	\end{figure}
+	
+Kolejnym etapem by³o utworzenie dokumentacji projektowej, która pozwala³aby na konsolidacjê procesu twórczego stosowanego przez zespo³y grafików i projektantów. Tutaj szczególny nacisk zosta³ po³o¿ony na odnalezieniu optymalnych rozwi¹zañ dla takiego zespo³u. \newline
+
+\textbf{Stworzenie listy assetów do wymodelowania i oteksturowania}. Podczas tworzenia tej pracy zosta³ wykorzystany pakiet \textit{LibreOffice}, który pozwala³ na proste i logiczne posegregowanie ca³oœci w arkuszu kalkulacyjnym. Utworzone zestawienia modeli i tekstur mo¿na zobaczyæ na rysunkach 4.3 oraz 4.4.
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.50]{figures/Models_list}
@@ -34,5 +46,27 @@ Grafika koncepcyjna bêd¹ca podstaw¹ realizacji czêœci praktycznej pracy zosta³a 
 		\includegraphics[scale = 0.40]{figures/Textures_list}
 		\caption{Lista tekstur do wykonania podczas realizacji czêœci praktycznej pracy (Ÿród³o: opracowanie w³asne)}
 	\end{figure}
+	\newline
+	Listy pokazane na obrazkach wymieniaj¹ kilka podstawowych parametrów, których powinni trzymaæ siê artyœci podczas ich tworzenia. S¹ to w przypadku siatek 3d:
+	\begin{itemize}
+		\item Nazwa wstêpna (tutaj jeszcze niekoniecznie zgodna z nazewnictwem przyjêtym ostatecznie w silniku).
+		\item Kierunek tilingu: tutaj wiêkszoœæ siatek wykorzystuje jeden lub nie umo¿liwia tilingu w ogóle (jak na przyk³ad elementy ozdobne ustawiane swobodnie w scenie)
+		\item Iloœæ wariantów kolorystycznych: w przypadku modu³ów wykorzystywanych wielokrotnie, liczba oznacza liczbê modeli wykonanych tak samo pod wzglêdem geometrii, jednak ró¿ni¹cych siê wygl¹dem (przy zmianie parametrów teksturowania, blendingu lub innych rozwi¹zaniach pozwalaj¹cych na urozmaicenie wygl¹du siatek)
+		\item Wymiary w scenie. Finalne rozmiary ka¿dego z modeli (uwzglêdniaj¹ce skalê silnika i dopasowanie do gridu). Ma to na celu narzucenie grafikowi wymagañ, które bêd¹ musia³y byæ spe³nione przez ca³y czas tworzenia projektu. Dziêki temu mo¿liwe bêdzie uk³adanie w scenie assetów na bardzo wczesnym etapie produkcji.
+	\end{itemize}
+	Podczas tworzenia listy tekstur dodano jeszcze dwa aspekty, które wczeœniej nie by³y istotne, a maj¹ wielkie znaczenie podczas tworzenia dwuwymiarowych grafik:
+	\begin{itemize}
+		\item Atlas tekstur, w którym znalaz³a siê dana grafika. W przypadku tej pracy wszystkie grafiki zosta³y zamieszczone w jednym atlasie, jednak podczas tworzenia wiêkszych paczek czêsto konieczny jest podzia³ na kilka.
+		\item Rozmieszczenie w danym atlasie. Takie podejœcie pokazuje dwie bardzo wa¿ne rzeczy: jak obszerny jest atlas i ile wolnego miejsca pozosta³o na inne tekstury, a tak¿e pozwala na wstêpne roz³o¿enie koordynatów UV obiektów zanim powstan¹ finalne tekstury wykorzystywane w paczce.
+	\end{itemize}
+	W przypadku tworzenia assetów przez wiêkszy zespó³, taka lista mo¿e zostaæ podzielona na mniejsze fragmenty i udostêpniona jako zbiór zadañ do wykonania, a nastêpnie rozdzielona pomiêdzy poszczególnych twórców za pomoc¹ narzêdzi takich, jak \textit{Trello} (dla ma³ych zespo³ów), czy te¿ \textit{Redmine} (w przypadku bardziej rozbudowanych grup). \newline
+	
+	\textbf{Grid, nazewnictwo i parametry eksportu}. 
 \section{Faza prototypowania}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.50]{figures/My_Pivots}
+		\caption{Umiejscowienie pivotów w zale¿noœci od zastosowania modelu (Ÿród³o: opracowanie w³asne)}
+	\end{figure}
+
 \section{Faza finalizowania}
