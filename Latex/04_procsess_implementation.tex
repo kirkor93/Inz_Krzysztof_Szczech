@@ -35,7 +35,9 @@ Efekt pracy mo¿na zobaczyæ na rysunku 4.2.
 	
 Kolejnym etapem by³o utworzenie dokumentacji projektowej, która pozwala³aby na konsolidacjê procesu twórczego stosowanego przez zespo³y grafików i projektantów. Tutaj szczególny nacisk zosta³ po³o¿ony na odnalezieniu optymalnych rozwi¹zañ dla takiego zespo³u. \newline
 
-\textbf{Stworzenie listy assetów do wymodelowania i oteksturowania}. Podczas tworzenia tej pracy zosta³ wykorzystany pakiet \textit{LibreOffice}, który pozwala³ na proste i logiczne posegregowanie ca³oœci w arkuszu kalkulacyjnym. Utworzone zestawienia modeli i tekstur mo¿na zobaczyæ na rysunkach 4.3 oraz 4.4.
+\textbf{Stworzenie listy assetów do wymodelowania i oteksturowania.} \newline 
+
+Podczas tworzenia tej pracy zosta³ wykorzystany pakiet \textit{LibreOffice}, który pozwala³ na proste i logiczne posegregowanie ca³oœci w arkuszu kalkulacyjnym. Utworzone zestawienia modeli i tekstur mo¿na zobaczyæ na rysunkach 4.3 oraz 4.4.
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.50]{figures/Models_list}
@@ -61,7 +63,23 @@ Kolejnym etapem by³o utworzenie dokumentacji projektowej, która pozwala³aby na k
 	\end{itemize}
 	W przypadku tworzenia assetów przez wiêkszy zespó³, taka lista mo¿e zostaæ podzielona na mniejsze fragmenty i udostêpniona jako zbiór zadañ do wykonania, a nastêpnie rozdzielona pomiêdzy poszczególnych twórców za pomoc¹ narzêdzi takich, jak \textit{Trello} (dla ma³ych zespo³ów), czy te¿ \textit{Redmine} (w przypadku bardziej rozbudowanych grup). \newline
 	
-	\textbf{Grid, nazewnictwo i parametry eksportu}. 
+	\textbf{Grid, parametry eksportu i nazewnictwo}. \newline
+	
+	Wszystkie trójwymiarowe modele wykorzystane w pracy zosta³y wymodelowane w programie \textit{Autodesk 3ds Max 2016}, z którego nastêpnie eksportowano je do silnika 3d - \textit{Unreal Engine 4}. Poniewa¿ docelowa technologia domyœlnie stosuje system jednostek oparty o centymetry (1 unit w silniku to odpowiednik 1 cm), wymagane by³o dostosowanie ustawieñ narzêdzi do modelowania dla wygodniejszej pracy. Domyœlna jednostka miary zosta³a zmieniona na 1 cm, a kolejne linie gridu zosta³y rozmieszczone co 100 cm. \newline
+	
+	Import modeli do \textit{Unreal Engine 4} odbywa siê poprzez pliki w formacie fbx, które domyœlnie s¹ obs³ugiwane przez wiêkszoœæ dostêpnych na rynku programów do obróbki grafiki trójwymiarowej. Silnik ma kilka wymagañ w kwestii parametrów siatek, które mo¿e zaimportowaæ. Najwa¿niejsze z nich, to:
+	\begin{itemize}
+		\item W pliku Ÿród³owym powinny znaleŸæ siê grupy wyg³adzania dla ka¿dej siatki.
+		\item Jednostk¹ miary powinien byæ centymetr, aby unikn¹æ ich skalowania.
+	\end{itemize}
+	Po dokonaniu zmian w ustawieniach eksportera, 3ds max umo¿liwia zapisanie ich w postaci presetu. Pozwala to na szybkie przywrócenie ustawieñ w razie ich utraty oraz dystrybucjê pomiêdzy innych cz³onków zespo³u, gdy¿ pliki z presetami mo¿na przenosiæ miêdzy komputerami. \newline
+	
+	NAZEWNICTWO DOKOÑCZYÆ !!! 
+		\begin{figure}[!ht]
+			\centering
+			\includegraphics[scale = 0.30]{figures/Missing_picture}
+			\caption{Przyk³adowa nazwa modelu w projekcie (Ÿród³o: opracowanie w³asne)}
+		\end{figure}
 \section{Faza prototypowania}
 	\begin{figure}[!ht]
 		\centering
