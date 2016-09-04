@@ -12,7 +12,7 @@ Grafika koncepcyjna, jak i sam pomys³ na stworzenie pracy zosta³ zainspirowany c
 \end{itemize}
 Dodatkowo, twórcy nie zalecaj¹ wykorzystywania programów s³u¿¹cych do szybkiego generowania assetów. Przyk³adem takiego mo¿e byæ Quixel dDo - program pozwalaj¹cy na generowanie tekstur ró¿nych powierzchni na podstawie wczeœniej stworzonych map (jak na przyk³ad normal mapa, któr¹ mo¿na stworzyæ za pomocn¹ innych programów) oraz danych wprowadzonych przez u¿ytkownika. \newline
 
-Grafika koncepcyjna bêd¹ca podstaw¹ realizacji czêœci praktycznej pracy zosta³a zaczerpniêta z jednej z edycji \textit{Monthly Community Noob Challenge}. W maju 2015 roku postawiono przed u¿ytkownikami forum wyzwanie stworzenia wnêtrza œwi¹tyni. Obraz, na którym wzorowali siê uczestnicy by³ równie¿ punktem wyjœcia dla tej pracy:
+Grafika koncepcyjna bêd¹ca podstaw¹ realizacji czêœci praktycznej pracy zosta³a zaczerpniêta z jednej z edycji \textit{Monthly Community Noob Challenge}. W maju 2015 roku postawiono przed u¿ytkownikami forum wyzwanie stworzenia wnêtrza œwi¹tyni. Obraz, na którym wzorowali siê uczestnicy by³ równie¿ punktem wyjœcia dla realizacji tej pracy:
 	\begin{figure}[!ht]
 		\centering
 		\includegraphics[scale = 0.45]{figures/My_concept}
@@ -90,9 +90,18 @@ Podczas tworzenia tej pracy zosta³ wykorzystany pakiet \textit{LibreOffice}, któ
 		\item \textbf{02} - oznacza, ¿e jest to drugi wariant wizualny tego modelu
 	\end{itemize}
 \section{Faza prototypowania}
+Szybkie, iteracyjne prototypowanie jest szczególnie wa¿ne, jeœli chce siê unikn¹æ du¿ych problemów z ustawieniem obiektów w póŸniejszych etapach projektu. Tutaj skupiono siê przede wszystkim na odpowiednim ustawieniem pivotów dla ka¿dego z nich. Modele i tekstury w tej fazie produkcji jeszcze dalekie s¹ od swojej finalnej formy, jednak po jej zakoñczeniu nale¿y pamiêtaæ, ¿e pewne parametry nie powinny zostaæ ju¿ zmieniane do samego koñca projektu:
+\begin{itemize}
+	\item wymiary (d³ugoœæ, szerokoœæ, wysokoœæ w przypadku siatek, po³o¿enie w atlasie dla tekstur)
+	\item pivoty
+	\item nazwy
+\end{itemize}
+Dziêki temu ³atwo jest unikn¹æ problemów, gdy w wiêkszym zespole, w którym równolegle pracuj¹ zespo³y projektantów i grafików praca jednych zostanie bardzo skomplikowana przez drugich. Kieruj¹c siê t¹ zasad¹ zosta³y wytworzone modele gotowe do wstêpnego uk³adania w silniku. \newline
+
+Na rysunku 4.6 mo¿na zobaczyæ przyk³adowe umiejscowienia pivotów dla dwóch modeli utworzonych podczas tej fazy. Pierwszy z nich (misa) ma go w œrodkowo-dolnej czêœci, aby ³atwo by³o go ustawiaæ w dowolnym miejscu na pod³odze. Jak ³atwo zauwa¿yæ - jest to obiekt, w którym wybór punktu opiera³ siê o jego potencjalne u³o¿enie w œrodowisku. W drugim z obiektów obrano miejsce przy dolnej krawêdzi na pocz¹tku siatki. Tutaj czynnikiem decyduj¹cym by³ tiling, gdy¿ jest to fragment œciany, który musi idealnie pasowaæ do innych podczas uk³adania w silniku.
 	\begin{figure}[!ht]
 		\centering
-		\includegraphics[scale = 0.50]{figures/My_Pivots}
+		\includegraphics[scale = 0.35]{figures/My_Pivots}
 		\caption{Umiejscowienie pivotów w zale¿noœci od zastosowania modelu (Ÿród³o: opracowanie w³asne)}
 	\end{figure}
 
