@@ -1,6 +1,6 @@
 % !TeX encoding = windows-1250
 
-\chapter{Opis procesu}
+\chapter{Opis procesu produkcji assetów}
 \label{t:description}
 Rozdzia³ ma za zadanie ukazanie procesu tworzenia poziomu od etapu wczesnego planowania a¿ do finalnej sceny z oœwietleniem. Ka¿dy etap zosta³ pokrótce opisany: dlaczego siê go stosuje i jak mo¿na podejœæ do niego w optymalny sposób. Przyk³ady oparte s¹ w g³ównej mierze o doœwiadczenie twórców zajmuj¹cych siê tym od wielu lat - takimi, jak chocia¿by Epic Games czy Bethesda Softworks - którzy swoimi spostrze¿eniami dziel¹ siê na wszelakiego rodzaju konferencjach i w publikowanych artyku³ach.
 \section{Podzia³ obrazka na modularne tekstury i modele}
@@ -17,7 +17,7 @@ Etap pisania dokumentacji projektowej jest szczególnie wa¿ny w przypadku, gdy na
 Podczas tworzenia takiej dokumentacji warto wzi¹æ pod uwagê takie elementy, jak chocia¿by:
 \begin{description}
 	\item[Tworzenie listy assetów] \hfill \\
-	Po wstêpnym wydzieleniu assetów na grafikach koncepcyjnych warto wypisaæ szczegó³ow¹ listê wszystkich modeli oraz tekstur, które zostan¹ zamieszczone w finalnej paczce. W przypadku siatek 3d warto równie¿ zapisaæ wymagany rozmiar w przestrzeni oraz liczbê kierunków tilingu (1, 2 lub jego brak). Podczas wpisywania tekstur, oprócz wymienionych ju¿ aspektów, mo¿na zwróciæ dodatkow¹ uwagê na ich umiejscowienie w atlasie - w którym z atlasów (jeœli jest ich kilka) oraz w którym jego miejscu ma siê ona znajdowaæ. \newline
+	Po wstêpnym wydzieleniu assetów na grafikach koncepcyjnych warto wypisaæ szczegó³ow¹ listê wszystkich modeli oraz tekstur, które zostan¹ zamieszczone w finalnym pakiecie assetów. W przypadku siatek 3d warto równie¿ zapisaæ wymagany rozmiar w przestrzeni\footnote{Przez rozmiar rozumie siê d³ugoœæ, szerokoœæ oraz wysokoœæ modelu w przestrzeni trójwymiarowej} oraz liczbê kierunków tilingu (1, 2 lub jego brak). Podczas wpisywania tekstur, oprócz wymienionych ju¿ aspektów, mo¿na zwróciæ dodatkow¹ uwagê na ich umiejscowienie w atlasie - w którym z atlasów (jeœli jest ich kilka) oraz w którym jego miejscu ma siê ona znajdowaæ. \newline
 	Taka lista mo¿e nastêpnie zostaæ opublikowana zespo³owi projektantów i grafików w postaci zadañ do wykonania lub nawet zwyk³ego, wspó³dzielonego w chmurze dokumentu.
 	\item[Jednostki miary w silniku oraz grid] \hfill \\
 	Bardzo wa¿n¹ kwesti¹, któr¹ nale¿y rozpatrzeæ jest dostosowanie ustawieñ programu do edycji modeli 3d do wymagañ stawianych przez silnik gry. Najwiêkszym problemem, który koniecznie trzeba rozpatrzeæ jest dobór jednostek stosowanych w docelowej technologii. Najwiêksz¹ konsekwencj¹ id¹c¹ za tym wyborem jest zmieniaj¹ca siê skala siatki wed³ug której ustawiane s¹ docelowe modele (ang. grid). Uk³adanie modeli za pomoc¹ gridu jest jedn¹ z najwiêkszych zalet modu³owego tworzenia poziomów. Pozwala ona znacznie skróciæ czas pracy projektantów, gdy¿ usuwa z procesu koniecznoœæ obliczania koordynatów ka¿dego obiektu i pozwala je ustawiaæ sugeruj¹c siê liniami wy¿ej wspomnianej siatki. Obecnie najpopularniejsze s¹ dwa rozwi¹zania stosowane przez twórców. Poni¿ej je przedstawiê, a tak¿e spróbujê przybli¿yæ potencjalne zalety i wady obu podejœæ:
@@ -125,7 +125,7 @@ Podczas finalizowania procesu tworzenia poziomu projektanci skupiaj¹ siê g³ównie
 		\item Odwrócenie uwagi gracza od takich miejsc - jeœli gracz bêdzie mia³ przed sob¹ inne, ciekawsze fragmenty poziomu istnieje mniejsza szansa na to, ¿e zwróci uwagê na te mniej doskona³e
 	\end{itemize}
 	Te wszystkie techniki mo¿na ze sob¹ ³¹czyæ w celu uzyskania jeszcze lepszego efektu.
-	\item \textbf{Zwrócenie uwagi gracza na elementy istotne w danym poziomie}. Tutaj chodzi przede wszystkim o to, aby gracz mia³ ca³y czas œwiadomoœæ tego dok¹d musi iœæ, aby pchn¹æ dalej akcjê. Za pomoc¹ oœwietlenia mo¿na go prowadziæ tak, aby pod¹¿a³ szlakiem wytyczonym przez twórców.
+	\item \textbf{Zwrócenie uwagi gracza na elementy istotne w danym poziomie}. Tutaj chodzi przede wszystkim o to, aby gracz mia³ ca³y czas œwiadomoœæ tego dok¹d musi iœæ, aby móc w dalszym ci¹gu rozwijaæ akcjê gry oraz p³ynnie przechodziæ miêdzy punktami kontrolnymi. Za pomoc¹ oœwietlenia mo¿na go prowadziæ tak, aby pod¹¿a³ szlakiem wytyczonym przez twórców.
 \end{itemize}
 	\begin{figure}[!ht]
 		\centering
