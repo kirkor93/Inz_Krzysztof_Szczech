@@ -1,6 +1,6 @@
 % !TeX encoding = windows-1250
 
-\chapter{Mo¿liwe metody optymalizacji procesu}
+\chapter{Mo¿liwe metody optymalizacji podczas produkcji modeli oraz tekstur}
 \label{t:optimalizations}
 Celem tego rozdzia³u jest przedstawienie istniej¹cych i wykorzystywanych w bran¿y gier komputerowych metod optymalizacji assetów trójwymiarowych. Ka¿da z opisywanych metod zawiera opis, potencjalne zyski id¹ce za jej zastosowaniem oraz przyk³ad u¿ycia w istniej¹cych produkcjach.
 
@@ -54,14 +54,30 @@ Bardzo wa¿nym pojêciem, które czêsto przewija siê przy okazji takiego podejœcia 
 	\caption{Przyk³adowa paczka modularnych modeli (Ÿród³o: \cite{ModularPack})}
 \end{figure}
 \section{Atlasowanie}
-Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku.  \newline 
+Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku. Mo¿liwe jest stosowanie go zarówno w odniesieniu do siatek wielok¹towych, jak i tekstur - choæ z regu³y czêœciej spotykan¹ praktyk¹ jest wykorzystywanie atlasów tekstur.\newline 
 
-Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach.
+Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach. Jest tak g³ównie dlatego, ¿e daje ona sporo korzyœci w kwestii potencjalnej wydajnoœci projektu. S¹ to przede wszystkim:
+\begin{itemize}
+	\item \textbf{Potencjalna oszczêdnoœæ pamiêci operacyjnej}
+	\item \textbf{Mniej draw calli podczas renderowania sceny}
+	\item \textbf{£atwiejszy dostêp do wielu tekstur jednoczeœnie}
+\end{itemize}
 
-DLACZEGO: Pamiêæ, batchowanie, czasy ³adowania, ³atwiejszy dostêp do wielu tekstur jednoczeœnie\newline
-RODZAJE: tekstur i modeli\newline
+Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla modeli, jak i tekstur. Poni¿ej opisano w jaki sposób postêpuje siê zarówno w jednym, jak i drugim przypadku:
+\begin{itemize}
+	\item \textbf{Atlasy tekstur}
+	\item \textbf{Atlasy modeli}
+\end{itemize}
 
+Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji.
+\begin{itemize}
+	\item \textbf{Du¿y rozmiar plików na repozytorium} - 
+	\item \textbf{Dodatkowe nak³ady pracy przy rêcznym uk³adaniu atlasów} - 
+\end{itemize}
 
 \section{Wykorzystywanie mo¿liwoœci u¿ywanego silnika}
-PBR\newline
-MASKI\newline
+Równie wa¿ne, jak stosowanie uniwersalnych technik optymalizacji, jest zapoznanie siê z mo¿liwoœciami oferowanymi przez wybran¹ technologiê, na której tworzony jest projekt gry. Pozwala to nie tylko na uzyskanie lepszych wyników w kwestii wydajnoœci, ale tak¿e na poprawienie jakoœci samej grafiki wyœwietlanej na ekranie gracza. Poniewa¿ docelowym silnikiem, na której realizowano czêœæ praktyczn¹ tej pracy jest \textit{Unreal Engine 4}, to w tej czêœci przybli¿one zostan¹ cechy charakterystyczne dla tej technologii:
+\begin{itemize}
+	\item \textbf{Physically based rendering} - 
+	\item \textbf{Maskowanie} - 
+\end{itemize}
