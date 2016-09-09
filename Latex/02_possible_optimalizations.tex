@@ -88,16 +88,17 @@ Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla sia
 \end{figure}
 \end{itemize}
 
-Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji. Mog¹ one byæ 
+Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji. W szczególnoœci mo¿emy wyró¿niæ tutaj:
 \begin{itemize}
 	\item \textbf{Du¿y rozmiar plików na repozytorium}. \newline
-	
-	\item \textbf{Dodatkowe nak³ady pracy przy rêcznym uk³adaniu atlasów} - 
+	Jeœli projekt jest przechowywany na repozytorium, wysy³anie nowych atlasów (w szczególnoœci tekstur) mo¿e byæ uci¹¿liwe lub czasami nawet niemo¿liwe poprzez ograniczenia technologiczne narzucone przez serwisy hostingowe. Przyk³adowo: serwis \textit{github.com} dla darmowych repozytoriów nie zezwala na umieszczanie w nich plików wiêkszych ni¿ 100 MB. Jeœli w projekcie wykorzystane bêd¹ atlasy w rozdzielczoœci przekraczaj¹cej 4096 na 4096 pikseli oraz zapisywane w formatach nie implementuj¹cych kompresji, to rozmiar pliku ³atwo mo¿e przekroczyæ t¹ wartoœæ, przez co niemo¿liwe stanie siê udostêpnienie go reszcie zespo³u pracuj¹cego nad projektem.
+	\item \textbf{Dodatkowe nak³ady pracy przy rêcznym uk³adaniu atlasów}. \newline
+	Automatyczne skrypty pozwalaj¹ce na kreowanie atlasów maj¹ wiele plusów, które pozwalaj¹ na usprawnienie pracy zespo³u grafików. Jednak w wielu przypadkach konieczne jest wykonanie tej pracy rêcznie i - co za tym idzie - borykanie siê z trudnoœciami manualnej obróbki obrazów. Jest to czasoch³onne, gdy¿ zazwyczaj wymagane jest stworzenie kilku lub nawet - w bardzo du¿ych projektach - kilkunastu atlasów. Dodatkowo zwykle dla ka¿dego modelu stosuje siê minimum trzy podstawowe mapy wp³ywaj¹ce na wygl¹d w silniku: diffuse (w której znajduj¹ siê informacje dotycz¹ce reakcji na œwiat³o rozproszone), normal (zawieraj¹c¹ wektory normalnych zakodowane w postaci pikseli) oraz specular / glow (która ma w sobie informacje o œwietle odbitym bezpoœrednio od powierzchni danego modelu).
 \end{itemize}
 
 \section{Wykorzystywanie mo¿liwoœci u¿ywanego silnika}
 Równie wa¿ne, jak stosowanie uniwersalnych technik optymalizacji, jest zapoznanie siê z mo¿liwoœciami oferowanymi przez wybran¹ technologiê, na której tworzony jest projekt gry. Pozwala to nie tylko na uzyskanie lepszych wyników w kwestii wydajnoœci, ale tak¿e na poprawienie jakoœci samej grafiki wyœwietlanej na ekranie gracza. Poniewa¿ docelowym silnikiem, na której realizowano czêœæ praktyczn¹ tej pracy jest \textit{Unreal Engine 4}, to w tej czêœci przybli¿one zostan¹ cechy charakterystyczne dla tej technologii:
 \begin{itemize}
-	\item \textbf{Physically based rendering} - 
-	\item \textbf{Maskowanie} - 
+	\item \textbf{Physically based rendering} \newline
+	\item \textbf{Maskowanie} \newline
 \end{itemize}
