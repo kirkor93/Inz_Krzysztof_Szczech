@@ -54,24 +54,44 @@ Bardzo wa¿nym pojêciem, które czêsto przewija siê przy okazji takiego podejœcia 
 	\caption{Przyk³adowa paczka modularnych modeli (Ÿród³o: \cite{ModularPack})}
 \end{figure}
 \section{Atlasowanie}
-Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku. Mo¿liwe jest stosowanie go zarówno w odniesieniu do siatek wielok¹towych, jak i tekstur - choæ z regu³y czêœciej spotykan¹ praktyk¹ jest wykorzystywanie atlasów tekstur.\newline 
+Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku. Mo¿liwe jest stosowanie go zarówno w odniesieniu do siatek wielok¹towych, jak i tekstur - choæ z regu³y czêœciej spotykan¹ praktyk¹ jest wykorzystywanie tego drugiego rodzaju.\newline 
 
-Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach. Jest tak g³ównie dlatego, ¿e daje ona sporo korzyœci w kwestii potencjalnej wydajnoœci projektu. S¹ to przede wszystkim:
+Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach. Jest tak g³ównie dlatego, ¿e daje ona wymierne korzyœci w kwestii potencjalnej wydajnoœci projektu. S¹ to przede wszystkim:
 \begin{itemize}
-	\item \textbf{Potencjalna oszczêdnoœæ pamiêci operacyjnej}
-	\item \textbf{Mniej draw calli podczas renderowania sceny}
-	\item \textbf{£atwiejszy dostêp do wielu tekstur jednoczeœnie}
+	\item \textbf{Potencjalna oszczêdnoœæ pamiêci operacyjnej} \newline
+	Pliki zapisywane na dysku twardym komputera w wielu wypadkach zawieraj¹ w sobie wiele nadmiarowych danych, które sprawiaj¹, ¿e zajmuj¹ czasem znacznie wiêcej miejsca, ni¿ ¿yczy³by to sobie ich autor. W przypadku plików wideo, oprócz zakodowanego obrazu i dŸwiêku, znaleŸæ mo¿na równie¿ dane o ich autorze, czy te¿ roku utworzenia klipu.\cite{VideoMetadata} Pliki graficzne mog¹ natomiast za³¹czaæ miejsce ich wykonania (w przypadku zdjêæ). Dodatkowo - ka¿dy plik zawiera w sobie równie¿ nag³ówek, który dodatkowo zwiêksza jego rozmiar. Zebranie kilku tekstur lub modeli pozwala na wyeliminowanie wielokrotnego zapisywania tego typu danych, co przy wiêkszej skali projektu pozwala na zmniejszenie zajmowanego miejsca.
+	\item \textbf{Skrócenie czasu u¿ycia dysku twardego} \newline
+	Wczytywanie zasobów z dysku twardego komputera jest procesem bardzo czasoch³onnym. Jest to szczególnie uci¹¿liwe, jeœli u¿ywany jest dysk starego typu (HDD), w którym wystêpuj¹ jeszcze ruchome, mechaniczne czêœci, które dodatkowo spowalniaj¹ ten proces. Podczas uruchamiania gry komputerowej ma to bardzo du¿y wp³yw na czasy wczytywania poszczególnych poziomów. W³aœnie dlatego zminimalizowanie liczby poszukiwañ plików jest kluczowe w procesie tworzenia gier komputerowych. Krótszy czas ogl¹dania ekranów ³adowania mo¿e mieæ równie¿ pozytywny wp³yw na imersjê gracza - krótsze przerwy od rozgrywki pozwalaj¹ mu lepiej wczuæ siê w ni¹.
+	\item \textbf{Mniej pakietów przesy³anych, które musi obs³u¿yæ procesor podczas renderowania sceny} \newline
+	Ka¿dy obiekt, tekstura, czy te¿ mechanika u¿yta w grze komputerowej jest potencjalnym nowym pakietem, który musi zostaæ przetworzony przez procesor na którymœ z etapów renderingu. Wspó³czesne procesory s¹ w stanie obs³u¿yæ nawet 100000 takich pakietów na sekundê. \cite{GPUGems2}\newline 
+	
+	Co prawda obecnie zaimplementowane technologie s¹ w stanie automatycznie ³¹czyæ luŸno rozrzucone assety w takie pakiety, jednak zrobienie tego w³asnorêcznie gwarantuje otrzymanie dok³adnie tylu pakietów, ile jest oczekiwane przez twórcê. 
+	\item \textbf{Mo¿liwoœæ tworzenia niewymiarowych tekstur} \newline
+	Wspó³czesne karty graficzne s¹ zaprojektowane w taki sposób, ¿e stawiaj¹ przed teksturami jedno, bardzo wa¿ne wymaganie: ich wymiary musz¹ byæ liczbami, które s¹ wynikiem podniesienia cyfry 2 do potêgi naturalnej. Stawia to wiele ograniczeñ przed twórcami, którzy musz¹ pamiêtaæ o tej zasadzie podczas teksturowania stworzonych przez siebie obiektów i przez to czêsto marnuj¹ wiele miejsca obrazu, który zwyczajnie by³ zbyt du¿y dla tworzonego modelu. Ten problem eliminuje wykorzystanie atlasowania. Po zebraniu wielu tekstur razem ich rozmiar przestaje mieæ znaczenie - wa¿ne s¹ tylko wymiary samego atlasu, w którym s¹ przechowywane.
 \end{itemize}
 
-Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla modeli, jak i tekstur. Poni¿ej opisano w jaki sposób postêpuje siê zarówno w jednym, jak i drugim przypadku:
+Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla siatek wielok¹towych, jak i tekstur. Poni¿ej opisano w jaki sposób postêpuje siê zarówno w jednym, jak i drugim przypadku:
 \begin{itemize}
-	\item \textbf{Atlasy tekstur}
-	\item \textbf{Atlasy modeli}
+	\item \textbf{Atlasy modeli} \newline
+	Zebranie modeli w atlas polega na ich wspólnym wyeksportowania do jednego pliku (na przyk³ad w formacie .fbx), zamiast przenoszenia ka¿dego z nich oddzielnie w systemie jedna siatka w jednym pliku. Wiêkszoœæ wspó³czesnych silników, w których tworzone s¹ gry komputerowe potrafi wydzielaæ sk³adowe tak skonstruowanych atlasów i umo¿liwia traktowanie ich, jakby ka¿dy model pochodzi³ z oddzielnego pliku.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale = 1.0]{figures/Unity_models}
+	\caption{Przyk³ad pliku zawieraj¹cego kilka siatek zaimportowanego do silnika Unity (Ÿród³o: opracowanie w³asne)}
+\end{figure}
+	\item \textbf{Atlasy tekstur} \newline
+	Znacznie czêstsz¹ praktyk¹, ni¿ atlasowanie siatek wielok¹towych jest wykorzystywanie tej techniki dla tekstur. Mo¿liwe jest rêczne rozmieszczanie poszczególnych obrazków w atlasie dla maksymalnej kontroli nad procesem lub u¿ycie specjalnych programów, które automatyzuj¹ i przyœpieszaj¹ proces. Jednak opieraj¹c siê na algorytmach nale¿y pamiêtaæ, ¿e potrafi¹ one ca³kowicie zmieniæ aran¿acjê atlasu i spowodowaæ koniecznoœæ zmian w rozk³adzie koordynatów UV modeli, które je wykorzystuj¹.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[scale = 0.50]{figures/Texture_atlas}
+	\caption{Z³o¿enie dwóch tekstur w atlas (Ÿród³o: \cite{Investigation})}
+\end{figure}
 \end{itemize}
 
-Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji.
+Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji. Mog¹ one byæ 
 \begin{itemize}
-	\item \textbf{Du¿y rozmiar plików na repozytorium} - 
+	\item \textbf{Du¿y rozmiar plików na repozytorium}. \newline
+	
 	\item \textbf{Dodatkowe nak³ady pracy przy rêcznym uk³adaniu atlasów} - 
 \end{itemize}
 
