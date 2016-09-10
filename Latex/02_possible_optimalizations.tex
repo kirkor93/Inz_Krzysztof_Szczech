@@ -1,6 +1,6 @@
 % !TeX encoding = windows-1250
 
-\chapter{Mo¿liwe metody optymalizacji podczas produkcji modeli oraz tekstur}
+\chapter{Mo¿liwe metody optymalizacji procesu produkcji modeli oraz tekstur}
 \label{t:optimalizations}
 Celem tego rozdzia³u jest przedstawienie istniej¹cych i wykorzystywanych w bran¿y gier komputerowych metod optymalizacji assetów trójwymiarowych. Ka¿da z opisywanych metod zawiera opis, potencjalne zyski id¹ce za jej zastosowaniem oraz przyk³ad u¿ycia w istniej¹cych produkcjach.
 
@@ -54,20 +54,20 @@ Bardzo wa¿nym pojêciem, które czêsto przewija siê przy okazji takiego podejœcia 
 	\caption{Przyk³adowa paczka modularnych modeli (Ÿród³o: \cite{ModularPack})}
 \end{figure}
 \section{Atlasowanie}
-Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku. Mo¿liwe jest stosowanie go zarówno w odniesieniu do siatek wielok¹towych, jak i tekstur - choæ z regu³y czêœciej spotykan¹ praktyk¹ jest wykorzystywanie tego drugiego rodzaju.\newline 
+Atlasowanie jest procesem maj¹cym na celu zebranie wielu niekoniecznie powi¹zanych ze sob¹ assetów w jedn¹ ca³oœæ oraz przechowywanie ich w jednym, du¿ym pliku. Mo¿liwe jest stosowanie go zarówno w odniesieniu do siatek wielok¹towych, jak i tekstur - choæ z regu³y czêœciej spotykan¹ praktyk¹ jest wykorzystywanie tego drugiego rodzaju atlasów.\newline 
 
-Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach. Jest tak g³ównie dlatego, ¿e daje ona wymierne korzyœci w kwestii potencjalnej wydajnoœci projektu. S¹ to przede wszystkim:
+Mimo pewnych problemów, jakie niesie za sob¹ stosowanie tej techniki podczas pracy, wielu twórców stosuje j¹ w swoich projektach. Jest tak g³ównie dlatego, ¿e daje ona wymierne korzyœci w kwestii wydajnoœci projektu. S¹ to przede wszystkim:
 \begin{itemize}
 	\item \textbf{Potencjalna oszczêdnoœæ pamiêci operacyjnej} \newline
-	Pliki zapisywane na dysku twardym komputera w wielu wypadkach zawieraj¹ w sobie wiele nadmiarowych danych, które sprawiaj¹, ¿e zajmuj¹ czasem znacznie wiêcej miejsca, ni¿ ¿yczy³by to sobie ich autor. W przypadku plików wideo, oprócz zakodowanego obrazu i dŸwiêku, znaleŸæ mo¿na równie¿ dane o ich autorze, czy te¿ roku utworzenia klipu.\cite{VideoMetadata} Pliki graficzne mog¹ natomiast za³¹czaæ miejsce ich wykonania (w przypadku zdjêæ). Dodatkowo - ka¿dy plik zawiera w sobie równie¿ nag³ówek, który dodatkowo zwiêksza jego rozmiar. Zebranie kilku tekstur lub modeli pozwala na wyeliminowanie wielokrotnego zapisywania tego typu danych, co przy wiêkszej skali projektu pozwala na zmniejszenie zajmowanego miejsca.
+	Pliki zapisywane na dysku twardym komputera w wielu wypadkach zawieraj¹ w sobie wiele nadmiarowych danych, które sprawiaj¹, ¿e zajmuj¹ czasem znacznie wiêcej miejsca, ni¿ ¿yczy³by sobie ich autor. W przypadku plików wideo, oprócz zakodowanego obrazu i dŸwiêku, znaleŸæ mo¿na równie¿ dane o ich autorze, czy te¿ roku utworzenia klipu.\cite{VideoMetadata} Pliki graficzne mog¹ natomiast za³¹czaæ miejsce ich wykonania (na przyk³ad w przypadku zdjêæ czêst¹ praktyk¹ jest zamieszczanie danych zebranych z modu³ów GPS aparatów). Dodatkowo - ka¿dy plik zawiera w sobie równie¿ nag³ówek, który dodatkowo zwiêksza jego rozmiar. Zebranie kilku tekstur lub modeli pozwala na wyeliminowanie wielokrotnego zapisywania tego typu danych, co przy wiêkszej skali projektu pozwala na wymierne zmniejszenie zajmowanego przez nie miejsca.
 	\item \textbf{Skrócenie czasu u¿ycia dysku twardego} \newline
 	Wczytywanie zasobów z dysku twardego komputera jest procesem bardzo czasoch³onnym. Jest to szczególnie uci¹¿liwe, jeœli u¿ywany jest dysk starego typu (HDD), w którym wystêpuj¹ jeszcze ruchome, mechaniczne czêœci, które dodatkowo spowalniaj¹ ten proces. Podczas uruchamiania gry komputerowej ma to bardzo du¿y wp³yw na czasy wczytywania poszczególnych poziomów. W³aœnie dlatego zminimalizowanie liczby poszukiwañ plików jest kluczowe w procesie tworzenia gier komputerowych. Krótszy czas ogl¹dania ekranów ³adowania mo¿e mieæ równie¿ pozytywny wp³yw na imersjê gracza - krótsze przerwy od rozgrywki pozwalaj¹ mu lepiej wczuæ siê w ni¹.
-	\item \textbf{Mniej pakietów przesy³anych, które musi obs³u¿yæ procesor podczas renderowania sceny} \newline
+	\item \textbf{Mniej pakietów, które musi obs³u¿yæ procesor podczas renderowania sceny} \newline
 	Ka¿dy obiekt, tekstura, czy te¿ mechanika u¿yta w grze komputerowej jest potencjalnym nowym pakietem, który musi zostaæ przetworzony przez procesor na którymœ z etapów renderingu. Wspó³czesne procesory s¹ w stanie obs³u¿yæ nawet 100000 takich pakietów na sekundê. \cite{GPUGems2}\newline 
 	
-	Co prawda obecnie zaimplementowane technologie s¹ w stanie automatycznie ³¹czyæ luŸno rozrzucone assety w takie pakiety, jednak zrobienie tego w³asnorêcznie gwarantuje otrzymanie dok³adnie tylu pakietów, ile jest oczekiwane przez twórcê. 
+	Co prawda obecnie zaimplementowane technologie s¹ w stanie automatycznie ³¹czyæ luŸno rozrzucone assety w takie pakiety, jednak zrobienie tego w³asnorêcznie gwarantuje otrzymanie dok³adnie tylu pakietów, ile jest oczekiwane przez twórcê. Dodatkowo, jeœli ich liczba bêdzie zbyt du¿a, to mo¿e mieæ ona wp³yw na tempo renderowania kolejnych klatek obrazu przez kartê graficzn¹, gdy¿ procesor nie bêdzie nad¹¿a³ z ich przetwarzaniem i kopiowaniem do pamiêci GPU. 
 	\item \textbf{Mo¿liwoœæ tworzenia niewymiarowych tekstur} \newline
-	Wspó³czesne karty graficzne s¹ zaprojektowane w taki sposób, ¿e stawiaj¹ przed teksturami jedno, bardzo wa¿ne wymaganie: ich wymiary musz¹ byæ liczbami, które s¹ wynikiem podniesienia cyfry 2 do potêgi naturalnej. Stawia to wiele ograniczeñ przed twórcami, którzy musz¹ pamiêtaæ o tej zasadzie podczas teksturowania stworzonych przez siebie obiektów i przez to czêsto marnuj¹ wiele miejsca obrazu, który zwyczajnie by³ zbyt du¿y dla tworzonego modelu. Ten problem eliminuje wykorzystanie atlasowania. Po zebraniu wielu tekstur razem ich rozmiar przestaje mieæ znaczenie - wa¿ne s¹ tylko wymiary samego atlasu, w którym s¹ przechowywane.
+	Wspó³czesne karty graficzne s¹ zaprojektowane w taki sposób, ¿e stawiaj¹ przed teksturami jedno, bardzo wa¿ne wymaganie: ich wymiary musz¹ byæ liczbami, które s¹ wynikiem podniesienia cyfry 2 do potêgi naturalnej. Stawia to wiele ograniczeñ przed twórcami, którzy musz¹ pamiêtaæ o tej zasadzie podczas teksturowania stworzonych przez siebie obiektów i przez to czêsto marnuj¹ wiele miejsca obrazu, który zwyczajnie by³ zbyt du¿y dla tworzonego modelu. Ten problem eliminuje wykorzystanie atlasowania. Po zebraniu wielu tekstur razem ich rozmiar przestaje mieæ znaczenie - wa¿ne s¹ tylko wymiary samego atlasu, w którym s¹ przechowywane. Przyk³adowo: w atlasie 1024 na 1024 pikseli (spe³niaj¹cym wy¿ej wspomniane wymogi) po odpowiednim jego rozplanowaniu mo¿na umieœciæ dowoln¹ iloœæ obrazów o dowolnej wielkoœci.
 \end{itemize}
 
 Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla siatek wielok¹towych, jak i tekstur. Poni¿ej opisano w jaki sposób postêpuje siê zarówno w jednym, jak i drugim przypadku:
@@ -88,17 +88,42 @@ Jak ju¿ zosta³o wspomniane wczeœniej, atlasowanie mo¿na stosowaæ zarówno dla sia
 \end{figure}
 \end{itemize}
 
-Wykorzystywanie atlasów wi¹¿e siê jednak z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji. W szczególnoœci mo¿emy wyró¿niæ tutaj:
+Wykorzystywanie atlasów wi¹¿e siê równie¿ z pewnymi utrudnieniami, z którymi nale¿y liczyæ siê podczas procesu produkcji. W szczególnoœci mo¿emy wyró¿niæ tutaj:
 \begin{itemize}
 	\item \textbf{Du¿y rozmiar plików na repozytorium}. \newline
 	Jeœli projekt jest przechowywany na repozytorium, wysy³anie nowych atlasów (w szczególnoœci tekstur) mo¿e byæ uci¹¿liwe lub czasami nawet niemo¿liwe poprzez ograniczenia technologiczne narzucone przez serwisy hostingowe. Przyk³adowo: serwis \textit{github.com} dla darmowych repozytoriów nie zezwala na umieszczanie w nich plików wiêkszych ni¿ 100 MB. Jeœli w projekcie wykorzystane bêd¹ atlasy w rozdzielczoœci przekraczaj¹cej 4096 na 4096 pikseli oraz zapisywane w formatach nie implementuj¹cych kompresji, to rozmiar pliku ³atwo mo¿e przekroczyæ t¹ wartoœæ, przez co niemo¿liwe stanie siê udostêpnienie go reszcie zespo³u pracuj¹cego nad projektem.
 	\item \textbf{Dodatkowe nak³ady pracy przy rêcznym uk³adaniu atlasów}. \newline
-	Automatyczne skrypty pozwalaj¹ce na kreowanie atlasów maj¹ wiele plusów, które pozwalaj¹ na usprawnienie pracy zespo³u grafików. Jednak w wielu przypadkach konieczne jest wykonanie tej pracy rêcznie i - co za tym idzie - borykanie siê z trudnoœciami manualnej obróbki obrazów. Jest to czasoch³onne, gdy¿ zazwyczaj wymagane jest stworzenie kilku lub nawet - w bardzo du¿ych projektach - kilkunastu atlasów. Dodatkowo zwykle dla ka¿dego modelu stosuje siê minimum trzy podstawowe mapy wp³ywaj¹ce na wygl¹d w silniku: diffuse (w której znajduj¹ siê informacje dotycz¹ce reakcji na œwiat³o rozproszone), normal (zawieraj¹c¹ wektory normalnych zakodowane w postaci pikseli) oraz specular / glow (która ma w sobie informacje o œwietle odbitym bezpoœrednio od powierzchni danego modelu).
+	Automatyczne skrypty pozwalaj¹ce na kreowanie atlasów maj¹ wiele plusów, które pozwalaj¹ na usprawnienie pracy zespo³u grafików. Jednak w wielu przypadkach konieczne jest wykonanie tej pracy rêcznie i - co za tym idzie - borykanie siê z trudnoœciami manualnej obróbki obrazów. Jest to czasoch³onne, gdy¿ zazwyczaj wymagane jest stworzenie kilku lub nawet - w bardzo du¿ych projektach - kilkunastu atlasów. Dodatkowo zwykle dla ka¿dego modelu stosuje siê minimum trzy podstawowe mapy wp³ywaj¹ce na wygl¹d w silniku: diffuse (w której znajduj¹ siê informacje dotycz¹ce reakcji na œwiat³o rozproszone), normal (zawieraj¹c¹ wektory normalnych zakodowane w postaci pikseli) oraz specular / glow (która ma w sobie informacje o œwietle odbitym bezpoœrednio od powierzchni danego modelu). Z tego te¿ powodu warto spróbowaæ wdro¿yæ rozwi¹zania automatyzuj¹ce proces - szczególnie podczas pracy przy wiêkszych projektach.
 \end{itemize}
 
 \section{Wykorzystywanie mo¿liwoœci u¿ywanego silnika}
-Równie wa¿ne, jak stosowanie uniwersalnych technik optymalizacji, jest zapoznanie siê z mo¿liwoœciami oferowanymi przez wybran¹ technologiê, na której tworzony jest projekt gry. Pozwala to nie tylko na uzyskanie lepszych wyników w kwestii wydajnoœci, ale tak¿e na poprawienie jakoœci samej grafiki wyœwietlanej na ekranie gracza. Poniewa¿ docelowym silnikiem, na której realizowano czêœæ praktyczn¹ tej pracy jest \textit{Unreal Engine 4}, to w tej czêœci przybli¿one zostan¹ cechy charakterystyczne dla tej technologii:
+Równie wa¿ne, jak stosowanie uniwersalnych technik optymalizacji, jest zapoznanie siê z mo¿liwoœciami oferowanymi przez wybran¹ technologiê, na której tworzony jest projekt gry. Pozwala to nie tylko na uzyskanie lepszych wyników w kwestii wydajnoœci, ale tak¿e na poprawienie jakoœci samej grafiki wyœwietlanej na monitorze gracza. Poniewa¿ docelowym silnikiem, na której realizowano czêœæ praktyczn¹ tej pracy jest \textit{Unreal Engine 4}, to w tej czêœci przybli¿one zostan¹ cechy charakterystyczne dla tej technologii:
 \begin{itemize}
 	\item \textbf{Physically based rendering} \newline
+	Rendering bazuj¹cy na rzeczywistych zjawiskach fizycznych jest czymœ, co od niedawna zaczyna podbijaæ œwiat gier komputerowych. Dzieje siê tak, poniewa¿ rozwój technologii od kilku lat zacz¹³ pozwalaæ na renderowanie obrazu tworzonego w ten sposób w czasie akceptowalnym dla graczy. Najnowsze wersje silników - takie, jak wspomniany wczeœniej \textit{Unreal Engine 4}, czy te¿ \textit{Unity 5} - pozwalaj¹ twórcom wykorzystywaæ zalety physycally based renderingu. \newline
+	
+	Czym w³aœciwie on jest? Wed³ug dokumentacji udostêpnionej przez twórców silnika \textit{Unreal Engine 4}: ''rendering oparty o fizykê to taki, który oblicza w przybli¿eniu to, jak œwiat³o dzia³a na dan¹ powierzchniê zamiast szacowaæ jego zachowanie w oparciu o ludzkie domys³y''.\cite{PBR} W praktyce oznacza to, i¿ PBR oblicza cieniowanie sceny na podstawie modelów matematycznych maj¹cych swoje odzwierciedlenie w œwiecie rzeczywistym (w pewnym przybli¿eniu). Wczeœniej stosowano prostsze modele, które nie mia³y zbyt wiele wspólnego z rzeczywistym zachowaniem œwiat³a, ale jednoczeœnie wymaga³y znacznie mniejszej mocy obliczeniowej. Ich przyk³adami s¹ chocia¿by:
+	\begin{itemize}
+		\item Model cieniowania Gourauda
+		\item Model cieniowania Phonga
+		\item Model cieniowania Phonga-Blinna
+		\item Model cieniowania Lamberta
+	\end{itemize}
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.60]{figures/PBR}
+		\caption{Przyk³ad obiektów wyrenderowanych dziêki Physycally Based Rendering w silniku \textit{Unreal Engine 4} (Ÿród³o: \cite{PBR})}
+	\end{figure}
+	Wykorzystanie PBR w projektach pozwala na uzyskiwanie bardzo realistycznych efektów, które nieraz przypominaj¹ rendery wizualizacji lub nawet zdjêcia.
 	\item \textbf{Maskowanie} \newline
+	Maskowanie jest technik¹ czêsto stosowan¹ podczas tworzenia dwuwymiarowych ilustracji, czy nawet animacji. Ma ona na celu zakrycie pewnych elementów jednego obrazka (lub te¿ warstwy w przypadku ilustracji sk³adaj¹cej siê z wiêcej ni¿ jednej z nich) w celu ukazania fragmentów innego, znajduj¹cego siê pod nim. Dziêki maskowaniu mo¿liwe jest uzyskiwanie ciekawych kompozycji wielu - czêsto niezwi¹zanych ze sob¹ - obrazów. \newline
+	
+	\textit{Unreal Engine 4} implementuje mechanizmy pozwalaj¹ce na wykorzystywanie masek w celu ³¹czenia ze sob¹ tekstur. Mo¿na to robiæ na wiêcej ni¿ jeden sposób, gdy¿ silnik oferuje implementacje wielu funkcji matematycznych, które pozwalaj¹ na uzyskanie ró¿nych efektów w zale¿noœci od aktualnych potrzeb twórcy. Co wiêcej - maskowanie pozwala nieraz unikn¹æ tworzenia wielu dodatkowych tekstur, które zajmowa³yby dodatkowe miejsce w pamiêci RAM karty graficznej. \newline
+	
+	Na rysunku 2.8 przedstawiono jedno z mo¿liwych zastosowañ masek w silniku. Tekstura krzy¿a zosta³a dodatkowo wzbogacona o emisjê ¿ó³tego œwiat³a w miejscach, gdzie jest ona przeŸroczysta (kana³ alfa przyjmuje wartoœæ zbli¿on¹ do zera). Do uzyskania efektu nie wykorzystano ¿adnych dodatkowych tekstur emisji, a jedynie prost¹ funkcjê matematyczn¹ - interpolacjê liniow¹, która zwraca³a coraz bardziej intensywny kolor ¿ó³ty wraz ze spadkiem wartoœci kana³u alfa tekstury, a nastêpnie by³ on wykorzystywany jako tekstura emisji dla stworzonego materia³u. Finalny efekt jest mo¿liwy do zaobserwowania w okienku podgl¹du edytora materia³ów w lewym górnym rogu obrazka.
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[scale = 0.45]{figures/UE4_masking}
+		\caption{Przyk³adowe wykorzystanie materia³u wykorzystuj¹cego maskowanie w \textit{Unreal Engine 4} (Ÿród³o: opracowanie w³asne)}
+	\end{figure}
 \end{itemize}
