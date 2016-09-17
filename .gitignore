@@ -1,7 +1,7 @@
-UnrealProject/Binaries/
-UnrealProject/DerivedDataCache
-UnrealProject/Intermediate/
-UnrealProject/Saved/
+Unreal/Binaries/
+Unreal/DerivedDataCache
+Unreal/Intermediate/
+Unreal/Saved/
 *.opensdf
 *.sdf
 *.sln
